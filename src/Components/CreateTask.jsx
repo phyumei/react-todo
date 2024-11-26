@@ -6,7 +6,14 @@ const CreateTask = ({ addTask }) => {
     setTask(event.target.value);
   };
   const handleAddTaskBtn = (event) => {
-    addTask(task);
+    const newTask = {
+      id: randomUUID(),
+      task: task,
+      isDone: false,
+    };
+
+    addTask(newTask);
+    setTask("");
   };
 
   return (

@@ -16,15 +16,27 @@ const App = () => {
     setTaskList([...taskList, newTask]);
   };
 
-  const removeTask = (taskToRemove) => {
-    setTaskList(taskList.filter((task) => task !== taskToRemove));
+  const removeTask = (id) => {
+    setTaskList(taskList.filter((task) => task.id !== id));
+  };
+
+  const doneTask = (id) => {
+    setTaskList(
+      taskList.map((task) =>
+        task.id === id ? { ...task, isDone: !task.isDone } : task
+      )
+    );
   };
 
   return (
     <div className="p-10">
       <Heading />
       <CreateTask addTask={addTask} />
-      <TaskList taskList={taskList} removeTask={removeTask} />
+      <TaskList
+        taskList={taskList}
+        removeTask={removeTask}
+        doneTask={doneTask}
+      />
     </div>
   );
 };
