@@ -4,6 +4,7 @@ import CreateTask from "./Components/CreateTask";
 import TaskList from "./Components/TaskList";
 
 const App = () => {
+  // app state
   const [taskList, setTaskList] = useState([
     { id: 1, task: "Buy groceries", isDone: false },
     { id: 2, task: "Complete project report", isDone: false },

@@ -7,7 +7,7 @@ const CreateTask = ({ addTask }) => {
   };
   const handleAddTaskBtn = (event) => {
     const newTask = {
-      id: randomUUID(),
+      id: crypto.randomUUID(),
       task: task,
       isDone: false,
     };
