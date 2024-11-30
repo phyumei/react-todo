@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import useTaskStore from "../store/useTaskStore";
 
-const CreateTask = ({ addTask }) => {
+const CreateTask = () => {
   const [task, setTask] = useState("");
+  const { addTask } = useTaskStore();
+
   const handleOnChange = (event) => {
     setTask(event.target.value);
   };
+
   const handleAddTaskBtn = (event) => {
     const newTask = {
       id: crypto.randomUUID(),
